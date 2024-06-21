@@ -1,12 +1,13 @@
-import React, {useState} from "react";
-
-const contacts = [
-   {id: 1, name: "prosper willims", email: "john@example.com", phone: "+23457684728"},
-   {id: 2, name: "john doe", email: "john@example.com", phone: "+23457684728"},
-   {id: 3, name: "alice emmanuel", email: "john@example.com", phone: "+23457684728"},
-];
+import React, {useContext, useState} from "react";
+import {contacts} from "../App";
+import {Link} from "react-router-dom";
+//
+//
+//
+//
+//
 const Home = () => {
-   const [Mycontacts, setMycontacts] = useState(contacts);
+   const {Mycontacts, setMycontacts} = useContext(contacts);
 
    const handledelete = (id) => {
       const newList = Mycontacts.filter((item) => item.id !== id);
@@ -15,19 +16,23 @@ const Home = () => {
    return (
       <div>
          <h1 className="text-2xl font-bold">Contacts</h1>
+         <div className="grid justify-center gap-4 text-center grid-cols-2 items-center underline text-sm">
+            <Link to={"/"}>Contacts</Link>
+            <Link to={"/add"}>Add new contact</Link>
+         </div>
          <br />
-         <div className="m-auto w-full justify-center items-center space-y-3 flex flex-col ">
+         <div className="m-auto w-full justify-center items-center space-y-3 grid grid-cols-3 max-w-[80%] ">
             {Mycontacts.length >= 1
                ? Mycontacts.map((contacts) => {
                     const {name, id, email, phone} = contacts;
                     return (
-                       <main key={contacts.id} id="" className="flex flex-row  items-top gap-2">
+                       <main key={id} id="" className="flex flex-row  items-top gap-2">
                           <img src="" alt="" className="w-20 h-20 border rounded-lg" />
                           <section className="text-left">
                              <div className="font-bold text-lg">{name}</div>
                              <div className="text-sm ">{email}</div>
                              <div className="text-xs">{phone}</div>
-                             <button className="bg-red-500" onClick={() => handledelete(id)}>
+                             <button className="bg-red-500 px-4 rounded-md" onClick={() => handledelete(id)}>
                                 delete
                              </button>
                           </section>

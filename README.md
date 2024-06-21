@@ -1,8 +1,2 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+i created a form, then used useRef() to extract the values, then using spread operator i added the values to my existing contacts array. then in my contacts page, i mapped through the contacts array and displayed my contacts on the screen. i added a delete button that when clicked, triggers a function and passes the "id" of the clicked contact and filters the contacts array, creating a new array of contacts whose id does not match the passed id. i plan to save my contacts to local storage, so that the contacts are not lost when page is refreshed . i also added a profile image section, although not made functional.
