@@ -11,13 +11,11 @@ const Addcontact = () => {
       let name = formref.current.name.value;
       let email = formref.current.email.value;
       let phone = formref.current.phone.value;
-
-      // const newlist = {name, email, phone};
-      // setMycontact([...Mycontact, newlist]);
-      // console.log(Mycontact);
       if (name && email && phone) {
          submitted(name, email, phone);
-         navigate("/");
+         setTimeout(() => {
+            navigate("/");
+         }, 2000);
       } else {
          alert("please make sure the form is filled");
       }

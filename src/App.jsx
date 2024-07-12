@@ -14,8 +14,8 @@ function App({children}) {
    const submitted = (name, email, phone) => {
       // e.preventDefault();
       console.log(name, email, phone);
-      const newlist = {id: people.length + 1, name: name, phone: phone, email: email};
-      setMycontacts([...people, newlist]);
+      const newlist = {id: Mycontacts.length + 1, name: name, phone: phone, email: email};
+      setMycontacts([...Mycontacts, newlist]);
    };
    return <contacts.Provider value={{Mycontacts, setMycontacts, submitted}}>{<Outlet />}</contacts.Provider>;
 }

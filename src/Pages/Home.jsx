@@ -21,7 +21,7 @@ const Home = () => {
             <Link to={"/add"}>Add new contact</Link>
          </div>
          <br />
-         <div className="m-auto w-full justify-center items-center space-y-3 grid grid-cols-3 max-w-[80%] ">
+         <div className="m-auto w-full justify-center items-center space-y-3 grid-cols-1 sm:grid-cols-2 grid md:grid-cols-3 max-w-[80%] ">
             {Mycontacts.length >= 1
                ? Mycontacts.map((contacts) => {
                     const {name, id, email, phone} = contacts;
